@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<div class="col-md-6">
+  <h2 class="text-center">Search Flight</h2>
+<form>
+  <div class="form-group">
+    <label for="flightNumber">Flight Number:</label>
+    <input type="flightNumber" [(ngModel)]="flightSearch.flightNumber" placeholder="FlightNumber" name="flightNumber" class="form-control" id="flightNumber">
+  </div>
+
+  <div class="form-group">
+    <label for="origin">Origin:</label>
+    <input [(ngModel)]="flightSearch.origin" placeholder="Origin" name="origin" class="form-control" id="origin">
+  </div>
+
+  <div class="form-group">
+    <label for="destination">Destination:</label>
+    <input [(ngModel)]="flightSearch.destination" placeholder="Destination" name="destination" class="form-control" id="destination">
+  </div>
+
+  <div class="form-group">
+    <label for="inputDateStr">Input Date:</label>
+    <input [(ngModel)]="flightSearch.inputDateStr" placeholder="InputDate" name="inputDateStr" class="form-control" id="inputDateStr">
+  </div>
+
+
+  <button class="btn btn-success" (click)="searchFlight()">Search</button>
+
+  <table class="table table-striped" border="1">
+    <thead>
+    <tr>
+      <th>Flight Number</th>
+      <th>Carrier</th>
+      <th>Origin</th>
+      <th>Departure</th>
+      <th>Destination</th>
+      <th>Arrival</th>
+      <th>Aircraft</th>
+      <th>Distance</th>
+      <th>Travel Time</th>
+      <th>Status</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let flightDetail of flightdetailsList">
+      <td>{{flightDetail.flightNumber}}</td>
+      <td>{{flightDetail.carrier}}</td>
+      <td>{{flightDetail.origin}}</td>
+      <td>{{flightDetail.departure}}</td>
+      <td>{{flightDetail.destination}}</td>
+      <td>{{flightDetail.arrival}}</td>
+      <td>{{flightDetail.aircraft}}</td>
+      <td>{{flightDetail.distance}}</td>
+      <td>{{flightDetail.travelTime}}</td>
+      <td>{{flightDetail.status}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</form>
+</div>
